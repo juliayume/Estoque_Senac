@@ -46,7 +46,7 @@
             <img src="./assets/Pefil.png" alt="mdo" width="40" height="40" alt="Avatar">
           </a>
           <ul class="dropdown-menu text-small">
-            <li><button type="button" style="font-family: 'Poppins', sans-serif; font-size: small;" class="dropdown-item modal-dialog modal-dialog-scrollable" data-bs-toggle="modal" data-bs-target="#exampleModal">Configurações</button></li>
+            <li><a class="font_style dropdown-item" style="font-size: small; margin-left: 0%;" data-bs-toggle="modal" href="#Config" role="button">Configurações</a></li>
             <li><a style="font-family: 'Poppins', sans-serif; font-size: small;" class="dropdown-item" href="#">Gerenciamento de usuários</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a style="font-family: 'Poppins', sans-serif; font-size: small;" class="dropdown-item" href="#">Sair</a></li>
@@ -55,6 +55,40 @@
       </div>
     </div>
   </nav>
+
+  <!-- SETTINGS  -->
+
+  <div class="modal" id="Config" aria-hidden="true" aria-labelledby="Config" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- USER SETTINGS -->
+
+        <!-- HEADER -->
+
+        <div class="modal-header mb-2">
+          <h1 class="modal-title font_style fs-5" id="Config">Configurações</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- BODY -->
+
+        <div class="modal-body">
+          <div class="align_center_horizontally mb-4">
+           </div> 
+           <img src="./assets/Pefil.png" alt="mdo" width="120" height="120" alt="Avatar">
+          </div> 
+          <div style="margin-right: 3%;" class="form-floating mb-4">
+            <input type="text" class="form-control rounded-5 font_style" id="floatingInputGrid" placeholder="text">
+            <label style="margin-left: 3%;" for="floatingInputGrid">Nome de usuário</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button style="background-color: #0E5CD0" class="btn btn-primary rounded-5" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Próximo</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- BODY -->
 
