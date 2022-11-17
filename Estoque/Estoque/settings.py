@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Status',
     'Historico',
     'Login',
+    'Usuarios'
 ]
 
 MIDDLEWARE = [

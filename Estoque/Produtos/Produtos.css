@@ -103,9 +103,8 @@ input[type='file']{
 .containerA{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 60px 70px 320px;
-    grid-template-areas: "headera"
-                         "sidebara"
+    grid-template-rows: 80px 70px 400px;
+    grid-template-areas: "sidebara"
                          "titulotabela"
                          "footere";
 }
