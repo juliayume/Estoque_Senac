@@ -1,117 +1,246 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300&display=swap');
-
-body, html{
-  margin: 0%;
-  padding: 0%;
-  background-color: #000874;
+.image__img {
+	display: block;
+	width: 100%;
 }
 
-.img{
-  width: 50%;
-  height: 50%;
-  object-fit: fill
-}
-
-button{
-  margin:auto;
-  margin-top: 5%;
-  width: 25%;
-  height: 70%;
-  background-color: #fff;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
-}
-
-button:hover {
-  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
-  font-family: 'Nunito Sans', sans-serif;
-  color: #ffffff;
-  transform: translateY(-7px);
-}
-
-button:active {
-  transform: translateY(-1px);
-}
-
-/* MENU */
-
-a {text-decoration: none;}
-
-.container {
-  margin: auto;
-  width: 100%;
-  height: 11%;
-}
-
-ul {
-  padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-  list-style: none;
-}
-
-nav {
-  background: #00043C;
-  font-size: 0;
-  font-family: 'Nunito Sans', sans-serif;
-}
-
-nav > ul > li {
-  display: inline-block;
-    font-size: 14px;
-    padding: 0 15px;
-}
-
-nav > ul > li > a {
-  color: #fff;
-    display: block;
-    padding: 20px 0;
-    border-bottom: 3px solid transparent;
-    transition: all .3s ease;
-}
-nav > ul > li:hover > a {
-  color: rgb(255, 255, 255); 
-    border-bottom: 3px solid rgb(48, 27, 240);
-}
-
-.mega-menu {
-    background: #eee;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-    position: absolute;
-    left: 0;
+.image__overlay {
+	position: absolute;
+	max-width: 200px;
     width: 100%;
-    padding-bottom: 20px;
+    height: 200px;
+	background: rgba(0, 0, 0, 0.6);
+	color: #ffffff;
+	font-family: 'Quicksand', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.25s;
 }
-.mega-menu h3 {color: #444;}
 
-.mega-menu .container {
+.image__overlay--blur {
+	backdrop-filter: blur(5px);
+}
+
+.image__overlay--primary {
+	background: #00000082;
+}
+
+.image__overlay>* {
+	transform: translateY(20px);
+	transition: transform 025s;
+}
+
+.image__overlay:hover {
+	opacity: 1;
+}
+
+.image__overlay:hover>* {
+	transform: translateY(0);
+}
+
+.logo {
+    width:3%;
+    height:auto;
+    margin-left: -78%;
+    margin-right: 1%;
+}
+
+input[type='file']{
+    display: none;
+}
+
+.max_width{
+    max-width: 90px;
+    width: 100%;
+}
+
+.rounder{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 50%;
+    max-width: 200px;
+    width: 100%;
+}
+
+#photo{
+    max-width: 200px;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.font_style{
+    font-family: 'Poppins', sans-serif;
+    margin-left: 2%;
+}
+
+.same_line{
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
-.mega-menu .item {
-  flex-grow: 1;
-    margin: 0 10px;
+
+.align_center {
+    margin-top: 1%;
 }
-.mega-menu .item img {
-    width: 100%;
+
+.align_center_horizontally{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
 }
-.mega-menu a {
-  border-bottom: 1px solid #ddd;
-    color: #4ea3d8;
-    display: block;
-    padding: 10px 0;
+
+.align_end{
+    display: flex;
+    align-items:center;
+    justify-content: end;
+    margin-right: 2%;
 }
-.mega-menu a:hover {color: #2d6a91;}
+
+.containerA{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10px 70px 300px 60px 70px 20px;
+    grid-template-areas: "espaço"
+                         "tituloinfo"
+                         "headera"
+                         "sidebara"
+                         "titulotabela"
+                         "footere";
+}
 
 
-.dropdown {position: static;}
-
-.dropdown:hover .mega-menu {
-    visibility: visible;
-    opacity: 1;
+.espaço{
+    grid-area: espaço;
 }
+
+.headera{
+    grid-area: headera;
+}
+
+.tituloinfo{
+  grid-area: tituloinfo;
+}
+
+.sidebara{
+    grid-area: sidebara;                                        
+}
+.titulotabela{
+    grid-area: titulotabela;
+}
+.footere{
+    grid-area: footere;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.scrollbar {
+    border: none;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    }
+    ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    }
+    ::-webkit-scrollbar-track {
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+    background: #d5d5d5;
+    border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+}
+
+.wrapper{
+    width: 460px;
+    background: #fff;
+    border-radius: 10px;
+  }
+  .wrapper header{
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+  }
+  header .icons{
+    display: flex;
+  }
+  header .icons span{
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    color: #878787;
+    text-align: center;
+    line-height: 38px;
+    font-size: 1.9rem;
+    user-select: none;
+    border-radius: 50%;
+  }
+  .icons span:last-child{
+    margin-right: -10px;
+  }
+  header .icons span:hover{
+    background: #f2f2f2;
+  }
+  header .current-date{
+    font-size: 1.45rem;
+    font-weight: 500;
+  }
+  .calendar{
+    padding: 20px;
+  }
+  .calendar ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+  }
+  .calendar .days{
+    margin-bottom: 20px;
+  }
+  .calendar li{
+    color: #333;
+    width: calc(100% / 7);
+    font-size: 1.07rem;
+  }
+  .calendar .weeks li{
+    font-weight: 500;
+    cursor: default;
+  }
+  .calendar .days li{
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    margin-top: 30px;
+  }
+  .days li.inactive{
+    color: #aaa;
+  }
+  .days li.active{
+    color: #fff;
+  }
+  .days li::before{
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .days li.active::before{
+    background: #e67418;
+  }
+  .days li:not(.active):hover::before{
+    background: #f2f2f2;
+  }

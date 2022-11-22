@@ -1,37 +1,415 @@
-<html>
-    <head>
-        <title> Lupa da Divdersidade </title>
-        <link rel="stylesheet" href="TelaProdutos.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualização do estoque</title>
+    <link rel="stylesheet" type="text/css" href="Estoque.css" />
+    <script src="Consumo.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    <body>    
-        <nav>
-            <ul class="container">
-              <li style="margin-left: 10%;"><a href='https://juliayume.github.io/TelaInicial/index.html'>Home</a></li>
-              <li style="margin-left: 1%;"><a href='https://juliayume.github.io/TelaProdutos/'>Produtos</a></li>
-            </ul>
-          </nav>
-        <div>
-            <a href=https://juliayume.github.io/TelaDados1/>
-            <button style="margin-left: 9%;">
-              <img class="img" src="Dados.png">
-            </button>
-            </a>
-            
-            <a href='https://juliayume.github.io/TelaAnalise/'>
-            <button style="margin-right: 3%; margin-left: 3%;">
-              <img class="img" src="Analise.png">
-            </button>
-            </a>
+  <!-- HEADER -->
 
-            <a href='https://juliayume.github.io/TelaAutor/index.html'>
-            <button>
-              <img style="width: 70%; height: 70%" src="Autores.png">
-            </button>
-            </a>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://www.google.com.br/">
+        <img src="./assets/LogoSenac.png" alt="Senac" width="50" height="25">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a style="font-family: 'Poppins', sans-serif;" class="nav-link" href="#">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a style="font-family: 'Poppins', sans-serif;" class="nav-link" href="#">Recebimento</a>
+          </li>
+          <li class="nav-item">
+            <a style="font-family: 'Poppins', sans-serif;" class="nav-link active" aria-current="page">Consumo</a>
+          </li>
+          <li class="nav-item">
+            <a style="font-family: 'Poppins', sans-serif;" class="nav-link">Estoque</a>
+          </li>
+        </ul>
+        
+        
+        <a style="font-family: 'Poppins', sans-serif; margin-right: 2%; font-size: 90%;" class="nav-link">Nome do usuário</a>
+        
+
+        <div class="dropdown text-end dropstart">
+          
+          <a href="#" class="d-block link-dark text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="./assets/Pefil.png" width="40" height="40" class="rounder">
+          </a>
+          <ul class="dropdown-menu text-small">
+            <li><a class="font_style dropdown-item" style="font-size: small; margin-left: 0%;" data-bs-toggle="modal" href="#Config" role="button">Configurações</a></li>
+            <li><a style="font-family: 'Poppins', sans-serif; font-size: small;" class="dropdown-item" href="#">Gerenciamento de usuários</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a style="font-family: 'Poppins', sans-serif; font-size: small;" class="dropdown-item" href="#">Sair</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SETTINGS  -->
+
+  <div class="modal" id="Config" aria-hidden="true" aria-labelledby="Config" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- USER SETTINGS -->
+
+        <!-- HEADER -->
+
+        <div class="modal-header mb-2">
+          <h1 class="modal-title font_style fs-5" id="Config">Configurações</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- BODY -->
+
+        <div class="modal-body">
+          <div class="align_center_horizontally mb-5">
+              <img class="image__img default_image" src="./assets/Pefil.png" alt="Selecione uma foto de perfil" id="photo">
+              <div class="image__overlay image__overlay--primary rounder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" style="margin-top: -15%" fill="currentColor" class="bi bi-cloud-upload" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M4.406 1.342A5.53 5.53 0 0 1 8 0c2.69 0 4.923 2 5.166 4.579C14.758 4.804 16 6.137 16 7.773 16 9.569 14.502 11 12.687 11H10a.5.5 0 0 1 0-1h2.688C13.979 10 15 8.988 15 7.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 2.825 10.328 1 8 1a4.53 4.53 0 0 0-2.941 1.1c-.757.652-1.153 1.438-1.153 2.055v.448l-.445.049C2.064 4.805 1 5.952 1 7.318 1 8.785 2.23 10 3.781 10H6a.5.5 0 0 1 0 1H3.781C1.708 11 0 9.366 0 7.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/>
+                  <path fill-rule="evenodd" d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                </svg>
+                <input type="file" id="update_image" name="new_image" accept="image/*" class="rounder">
+              </div>
+          </div> 
+          <div style="margin-right: 3%;" class="form-floating mb-4">
+            <input type="text" class="form-control rounded-5 font_style" id="floatingInputGrid" placeholder="text">
+            <label style="margin-left: 3%;" for="floatingInputGrid">Nome de usuário</label>
           </div>
-    </body>
+        </div>
+        <div class="modal-footer">
+          <button style="background-color: #0E5CD0" class="btn btn-primary rounded-5" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Próximo</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- BODY -->
+
+  <div class = "containerA">
+    <div class="espaço"></div>
+  
+  <!-- INFORMATIVE -->
+
+  <div class="tituloinfo">
+    <h3 class="font_style align_center">Indicadores</h3>
+  </div>
+    <div class="headera">
+      <div class="row text-center" style="padding: 1%; border-color: black;">
+        <div class="col-sm-2" style="margin-left: 6%;">
+          <div class="card">
+            <div class="card-header font_style" style="font-size: small;">
+              Quantidade
+            </div>
+            <div class="card-body">
+              <p class="card-title">XX</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2" style="margin-left: 2%;">
+          <div class="card">
+            <div class="card-header font_style" style="font-size: small;">
+              Data
+              <a type="button" data-bs-toggle="modal" style="margin-left: 3%; margin-top: -6%; color: rgb(49, 49, 49);" href="#calendario" role="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+              </svg></a>
+            </div>
+            <div class="card-body">
+              <p class="card-title">XX/XX/XXXX</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+
+    <!-- CALENDAR -->
+
+    <div class="modal" id="calendario" aria-hidden="true" aria-labelledby="calendario" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="wrapper">
+            <header>
+              <p class="current-date font_style"></p>
+              <div class="icons">
+                <span id="prev" class="material-symbols-rounded">
+                  <svg xmlns="http://www.w3.org/2000/svg" style="margin-top: -10;" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                  </svg>
+                </span>
+                <span id="next" class="material-symbols-rounded">
+                  <svg xmlns="http://www.w3.org/2000/svg" style="margin-top: -10;" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg>
+                </span>
+              </div>
+            </header>
+            <div class="calendar font_style">
+              <ul class="weeks font_style">
+                <li>Dom</li>
+                <li>Seg</li>
+                <li>Ter</li>
+                <li>Qua</li>
+                <li>Qui</li>
+                <li>Sex</li>
+                <li>Sab</li>
+              </ul>
+              <ul class="days"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- ACTIONS -->
+
+    <div class="align_end sidebara">
+      <a class="btn font_style" role="button" data-bs-toggle="modal" href="#Editar" aria-current="page" href="#">Editar</a>
+      <a class="font_style btn">Excluir</a>
+      <a class="btn-primary btn font_style" data-bs-toggle="modal" style="background-color: #0E5CD0; margin-right: 2%;" href="#exampleModalToggle" role="button">Novo</a>
+      <svg xmlns="http://www.w3.org/2000/svg" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" color="#0E5CD0" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z"></path>
+      </svg>
+    </div>
+
+    <!-- FILTER -->
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h4 class="offcanvas-title font_style" id="offcanvasRightLabel">Filtros</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div style="margin-right: 3%;" class="form-floating mb-4">
+          <input type="text" class="form-control rounded-5 font_style" id="floatingInputGrid" placeholder="text">
+          <label style="margin-left: 3%;" for="floatingInputGrid">Código do consumidor</label>
+        </div>
+        <div style="margin-right: 3%;" class="form-floating mb-4">
+          <input type="text" class="form-control rounded-5 font_style" id="floatingInputGrid" placeholder="text">
+          <label style="margin-left: 3%;" for="floatingInputGrid">Nome do produto</label>
+        </div>
+        <div class="modal-footer">
+          <button style="background-color: #0E5CD0" class="btn btn-primary rounded-5" data-bs-dismiss="offcanvas" aria-label="Close">Confirmar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW  -->
+
+    <div class="modal" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+          <!-- HEADER -->
+
+          <div class="modal-header mb-4">
+            <h1 class="modal-title font_style fs-5" id="exampleModalToggleLabel">Consumir produtos</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <!-- BODY -->
+
+          <div class="modal-body">
+            <div style="margin-right: 3%;" class="form-floating mb-4">
+              <input type="text" class="form-control rounded-5 font_style" id="floatingInputGrid" placeholder="text">
+              <label style="margin-left: 3%;" for="floatingInputGrid">Código do usuário</label>
+            </div>
+            <div style="margin-right: 3%;" class="form-floating mb-4">
+              <input type="text" class="form-control rounded-5 font_style" id="floatingInputGrid" placeholder="text">
+              <label style="margin-left: 3%;" for="floatingInputGrid">Nome do produto</label>
+            </div>
+            <div style="margin-right: 3%;" class="form-floating mb-4">
+              <input type="text" class="form-control rounded-5 font_style" id="floatingInputGrid" placeholder="text">
+              <label style="margin-left: 3%;" for="floatingInputGrid">Quantidade de produtos</label>
+            </div>
+            <div style="margin-right: 3%;" class="form-floating mb-4">
+              <textarea class="form-control rounded-5 font_style" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+              <label style="margin-left: 3%;" for="floatingTextarea2">Motivo do consumo</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button style="background-color: #0E5CD0" class="btn btn-primary rounded-5" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Concluído</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- EDIT -->
+
+    <div class="modal" id="Editar" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+          <!-- HEADER -->
+
+          <div class="modal-header mb-4">
+            <h1 class="modal-title font_style fs-5" id="Editar">Consumir produtos</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <!-- BODY -->
+
+          <div class="modal-body">
+            <div style="margin-right: 3%;" class="form-floating mb-4">
+              <input type="text" class="form-control rounded-5 font_style" id="floatingInputGrid" placeholder="text">
+              <label style="margin-left: 3%;" for="floatingInputGrid">Código do usuário</label>
+            </div>
+            <div style="margin-right: 3%;" class="form-floating mb-4">
+              <input type="text" class="form-control rounded-5 font_style" id="floatingInputGrid" placeholder="text">
+              <label style="margin-left: 3%;" for="floatingInputGrid">Nome do produto</label>
+            </div>
+            <div style="margin-right: 3%;" class="form-floating mb-4">
+              <input type="text" class="form-control rounded-5 font_style" id="floatingInputGrid" placeholder="text">
+              <label style="margin-left: 3%;" for="floatingInputGrid">Quantidade de produtos</label>
+            </div>
+            <div style="margin-right: 3%;" class="form-floating mb-4">
+              <textarea class="form-control rounded-5 font_style" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+              <label style="margin-left: 3%;" for="floatingTextarea2">Motivo do consumo</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button style="background-color: #0E5CD0" class="btn btn-primary rounded-5" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Concluído</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- TITLE -->
+
+    <div class="titulotabela">
+      <h3 class="font_style align_center">Estoque</h3>
+    </div>
+
+    <!-- TABLE -->
+
+    <div class="footere scrollbar">
+      <div class="table-responsive-xl">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Produto</th>
+              <th scope="col">Consumidor</th>
+              <th scope="col">Quantidade</th>
+              <th scope="col">Data</th>
+              <th scope="col">Motivo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
+              <td>Limpa vidro</td>
+              <td>123</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
+            </tr>
+            <tr>
+              <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
+              <td>Régua</td>
+              <td>234</td>
+              <td>1</td>
+              <td>09/10/2022 10:30</td>
+              <td>Usado para atividades dentro da sala de aula ...</td>
+            </tr>
+            <tr>
+              <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
+              <td>Vassoura</td>
+              <td>345</td>
+              <td>1</td>
+              <td>09/10/2022 10:30</td>
+              <td>Usado para limpeza de toda escola ...</td>
+            </tr>
+            <tr>
+              <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
+              <td>Vassoura</td>
+              <td>345</td>
+              <td>1</td>
+              <td>09/10/2022 10:30</td>
+              <td>Usado para limpeza de toda escola ...</td>
+            </tr>
+            <tr>
+              <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
+              <td>Vassoura</td>
+              <td>345</td>
+              <td>2</td>
+              <td>09/10/2022 10:30</td>
+              <td>Usado para limpeza de toda escola ...</td>
+            </tr>
+            <tr>
+              <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
+              <td>Vassoura</td>
+              <td>345</td>
+              <td>3</td>
+              <td>09/10/2022 10:30</td>
+              <td>Usado para limpeza de toda escola ...</td>
+            </tr>
+            <tr>
+              <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
+              <td>Vassoura</td>
+              <td>345</td>
+              <td>1</td>
+              <td>05/10/2022 17:45</td>
+              <td>Usado para limpeza de toda escola ...</td>
+            </tr>
+            <tr>
+              <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
+              <td>Vassoura</td>
+              <td>345</td>
+              <td>1</td>
+              <td>05/10/2022 17:45</td>
+              <td>Usado para limpeza de toda escola ...</td>
+            </tr>
+            <tr>
+              <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
+              <td>Vassoura</td>
+              <td>345</td>
+              <td>1</td>
+              <td>05/10/2022 17:45</td>
+              <td>Usado para limpeza de toda escola ...</td>
+            </tr>
+            <tr>
+              <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
+              <td>Vassoura</td>
+              <td>345</td>
+              <td>1</td>
+              <td>05/10/2022 17:45</td>
+              <td>Usado para limpeza de toda escola ...</td>
+            </tr>
+            <tr>
+              <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
+              <td>Vassoura</td>
+              <td>345</td>
+              <td>1</td>
+              <td>05/10/2022 17:45</td>
+              <td>Usado para limpeza de toda escola ...</td>
+            </tr>
+          </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
 </html>
