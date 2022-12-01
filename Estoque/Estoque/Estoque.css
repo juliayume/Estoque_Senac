@@ -84,7 +84,8 @@ input[type='file']{
 }
 
 .align_center {
-    margin-top: 1%;
+    display: flex;
+    align-items: center;  
 }
 
 .align_center_horizontally{
@@ -95,20 +96,16 @@ input[type='file']{
 
 .align_end{
     display: flex;
-    align-items:center;
     justify-content: end;
-    margin-right: 2%;
 }
 
 .containerA{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 10px 70px 300px 60px 70px 20px;
+    grid-template-rows: 3px 70px 150px 300px;
     grid-template-areas: "espaço"
-                         "tituloinfo"
                          "headera"
                          "sidebara"
-                         "titulotabela"
                          "footere";
 }
 
@@ -119,10 +116,16 @@ input[type='file']{
 
 .headera{
     grid-area: headera;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+ 
 }
 
 .tituloinfo{
   grid-area: tituloinfo;
+  margin-bottom: 20px;
 }
 
 .sidebara{

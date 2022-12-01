@@ -35,10 +35,10 @@
             <a style="font-family: 'Poppins', sans-serif;" class="nav-link" href="#">Recebimento</a>
           </li>
           <li class="nav-item">
-            <a style="font-family: 'Poppins', sans-serif;" class="nav-link active" aria-current="page">Consumo</a>
+            <a style="font-family: 'Poppins', sans-serif;" class="nav-link " aria-current="page">Consumo</a>
           </li>
           <li class="nav-item">
-            <a style="font-family: 'Poppins', sans-serif;" class="nav-link">Estoque</a>
+            <a style="font-family: 'Poppins', sans-serif;" class="nav-link active">Estoque</a>
           </li>
         </ul>
         
@@ -109,85 +109,21 @@
   
   <!-- INFORMATIVE -->
 
-  <div class="tituloinfo">
-    <h3 class="font_style align_center">Indicadores</h3>
+  <div class="headera">
+  <div class="alert alert-danger" role="alert">
+    <strong>Cuidado!</strong> O estoque de vassoura está acabando.
   </div>
-    <div class="headera">
-      <div class="row text-center" style="padding: 1%; border-color: black;">
-        <div class="col-sm-2" style="margin-left: 6%;">
-          <div class="card">
-            <div class="card-header font_style" style="font-size: small;">
-              Quantidade
-            </div>
-            <div class="card-body">
-              <p class="card-title">XX</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-2" style="margin-left: 2%;">
-          <div class="card">
-            <div class="card-header font_style" style="font-size: small;">
-              Data
-              <a type="button" data-bs-toggle="modal" style="margin-left: 3%; margin-top: -6%; color: rgb(49, 49, 49);" href="#calendario" role="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
-                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-              </svg></a>
-            </div>
-            <div class="card-body">
-              <p class="card-title">XX/XX/XXXX</p>
-            </div>
-          </div>
-      </div>
-    </div>
-    
-
-    <!-- CALENDAR -->
-
-    <div class="modal" id="calendario" aria-hidden="true" aria-labelledby="calendario" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="wrapper">
-            <header>
-              <p class="current-date font_style"></p>
-              <div class="icons">
-                <span id="prev" class="material-symbols-rounded">
-                  <svg xmlns="http://www.w3.org/2000/svg" style="margin-top: -10;" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-                  </svg>
-                </span>
-                <span id="next" class="material-symbols-rounded">
-                  <svg xmlns="http://www.w3.org/2000/svg" style="margin-top: -10;" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                  </svg>
-                </span>
-              </div>
-            </header>
-            <div class="calendar font_style">
-              <ul class="weeks font_style">
-                <li>Dom</li>
-                <li>Seg</li>
-                <li>Ter</li>
-                <li>Qua</li>
-                <li>Qui</li>
-                <li>Sex</li>
-                <li>Sab</li>
-              </ul>
-              <ul class="days"></ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  
+  </div>
+        
     <!-- ACTIONS -->
 
-    <div class="align_end sidebara">
-      <a class="btn font_style" role="button" data-bs-toggle="modal" href="#Editar" aria-current="page" href="#">Editar</a>
-      <a class="font_style btn">Excluir</a>
-      <a class="btn-primary btn font_style" data-bs-toggle="modal" style="background-color: #0E5CD0; margin-right: 2%;" href="#exampleModalToggle" role="button">Novo</a>
-      <svg xmlns="http://www.w3.org/2000/svg" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" color="#0E5CD0" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-        <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z"></path>
-      </svg>
+    <div class="sidebara align_center">
+      <h3 class="font_style">Estoque</h3>
+      <div style="margin-left: 85%;">
+        <svg xmlns="http://www.w3.org/2000/svg" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" color="#0E5CD0" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z"></path>
+        </svg>
+      </div>
     </div>
 
     <!-- FILTER -->
@@ -212,93 +148,6 @@
       </div>
     </div>
 
-    <!-- NEW  -->
-
-    <div class="modal" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-
-          <!-- HEADER -->
-
-          <div class="modal-header mb-4">
-            <h1 class="modal-title font_style fs-5" id="exampleModalToggleLabel">Consumir produtos</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-
-          <!-- BODY -->
-
-          <div class="modal-body">
-            <div style="margin-right: 3%;" class="form-floating mb-4">
-              <input type="text" class="form-control rounded-5 font_style" id="floatingInputGrid" placeholder="text">
-              <label style="margin-left: 3%;" for="floatingInputGrid">Código do usuário</label>
-            </div>
-            <div style="margin-right: 3%;" class="form-floating mb-4">
-              <input type="text" class="form-control rounded-5 font_style" id="floatingInputGrid" placeholder="text">
-              <label style="margin-left: 3%;" for="floatingInputGrid">Nome do produto</label>
-            </div>
-            <div style="margin-right: 3%;" class="form-floating mb-4">
-              <input type="text" class="form-control rounded-5 font_style" id="floatingInputGrid" placeholder="text">
-              <label style="margin-left: 3%;" for="floatingInputGrid">Quantidade de produtos</label>
-            </div>
-            <div style="margin-right: 3%;" class="form-floating mb-4">
-              <textarea class="form-control rounded-5 font_style" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-              <label style="margin-left: 3%;" for="floatingTextarea2">Motivo do consumo</label>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button style="background-color: #0E5CD0" class="btn btn-primary rounded-5" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Concluído</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
-    <!-- EDIT -->
-
-    <div class="modal" id="Editar" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-
-          <!-- HEADER -->
-
-          <div class="modal-header mb-4">
-            <h1 class="modal-title font_style fs-5" id="Editar">Consumir produtos</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-
-          <!-- BODY -->
-
-          <div class="modal-body">
-            <div style="margin-right: 3%;" class="form-floating mb-4">
-              <input type="text" class="form-control rounded-5 font_style" id="floatingInputGrid" placeholder="text">
-              <label style="margin-left: 3%;" for="floatingInputGrid">Código do usuário</label>
-            </div>
-            <div style="margin-right: 3%;" class="form-floating mb-4">
-              <input type="text" class="form-control rounded-5 font_style" id="floatingInputGrid" placeholder="text">
-              <label style="margin-left: 3%;" for="floatingInputGrid">Nome do produto</label>
-            </div>
-            <div style="margin-right: 3%;" class="form-floating mb-4">
-              <input type="text" class="form-control rounded-5 font_style" id="floatingInputGrid" placeholder="text">
-              <label style="margin-left: 3%;" for="floatingInputGrid">Quantidade de produtos</label>
-            </div>
-            <div style="margin-right: 3%;" class="form-floating mb-4">
-              <textarea class="form-control rounded-5 font_style" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-              <label style="margin-left: 3%;" for="floatingTextarea2">Motivo do consumo</label>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button style="background-color: #0E5CD0" class="btn btn-primary rounded-5" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Concluído</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-
-    <!-- TITLE -->
-
-    <div class="titulotabela">
-      <h3 class="font_style align_center">Estoque</h3>
-    </div>
 
     <!-- TABLE -->
 
@@ -308,11 +157,14 @@
             <thead>
             <tr>
               <th scope="col"></th>
-              <th scope="col">Produto</th>
-              <th scope="col">Consumidor</th>
-              <th scope="col">Quantidade</th>
-              <th scope="col">Data</th>
-              <th scope="col">Motivo</th>
+              <th scope="col">Código no estoque</th>
+              <th scope="col">Data de consumo</th>
+              <th scope="col">Código do produto</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Tipo do produto</th>
+              <th scope="col">Motivo do consumo</th>
+              <th scope="col">Código do consumo</th>
+              <th scope="col">Código de recebimento</th>
             </tr>
           </thead>
           <tbody>
@@ -323,86 +175,119 @@
               <td>10</td>
               <td>10/10/2022 08:30</td>
               <td>Usado para limpeza de vidros e espelhos ...</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
             </tr>
             <tr>
               <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
-              <td>Régua</td>
-              <td>234</td>
-              <td>1</td>
-              <td>09/10/2022 10:30</td>
-              <td>Usado para atividades dentro da sala de aula ...</td>
+              <td>Limpa vidro</td>
+              <td>123</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
             </tr>
             <tr>
               <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
-              <td>Vassoura</td>
-              <td>345</td>
-              <td>1</td>
-              <td>09/10/2022 10:30</td>
-              <td>Usado para limpeza de toda escola ...</td>
+              <td>Limpa vidro</td>
+              <td>123</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
             </tr>
             <tr>
               <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
-              <td>Vassoura</td>
-              <td>345</td>
-              <td>1</td>
-              <td>09/10/2022 10:30</td>
-              <td>Usado para limpeza de toda escola ...</td>
+              <td>Limpa vidro</td>
+              <td>123</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
             </tr>
             <tr>
               <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
-              <td>Vassoura</td>
-              <td>345</td>
-              <td>2</td>
-              <td>09/10/2022 10:30</td>
-              <td>Usado para limpeza de toda escola ...</td>
+              <td>Limpa vidro</td>
+              <td>123</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
             </tr>
             <tr>
               <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
-              <td>Vassoura</td>
-              <td>345</td>
-              <td>3</td>
-              <td>09/10/2022 10:30</td>
-              <td>Usado para limpeza de toda escola ...</td>
+              <td>Limpa vidro</td>
+              <td>123</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
             </tr>
             <tr>
               <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
-              <td>Vassoura</td>
-              <td>345</td>
-              <td>1</td>
-              <td>05/10/2022 17:45</td>
-              <td>Usado para limpeza de toda escola ...</td>
+              <td>Limpa vidro</td>
+              <td>123</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
             </tr>
             <tr>
               <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
-              <td>Vassoura</td>
-              <td>345</td>
-              <td>1</td>
-              <td>05/10/2022 17:45</td>
-              <td>Usado para limpeza de toda escola ...</td>
+              <td>Limpa vidro</td>
+              <td>123</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
             </tr>
             <tr>
               <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
-              <td>Vassoura</td>
-              <td>345</td>
-              <td>1</td>
-              <td>05/10/2022 17:45</td>
-              <td>Usado para limpeza de toda escola ...</td>
+              <td>Limpa vidro</td>
+              <td>123</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
             </tr>
             <tr>
               <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
-              <td>Vassoura</td>
-              <td>345</td>
-              <td>1</td>
-              <td>05/10/2022 17:45</td>
-              <td>Usado para limpeza de toda escola ...</td>
+              <td>Limpa vidro</td>
+              <td>123</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
             </tr>
             <tr>
               <td><input class="form-check-input flex-shrink-0" type="checkbox" value=""></td>
-              <td>Vassoura</td>
-              <td>345</td>
-              <td>1</td>
-              <td>05/10/2022 17:45</td>
-              <td>Usado para limpeza de toda escola ...</td>
+              <td>Limpa vidro</td>
+              <td>123</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
+              <td>10</td>
+              <td>10/10/2022 08:30</td>
+              <td>Usado para limpeza de vidros e espelhos ...</td>
             </tr>
           </tbody>
           </table>
