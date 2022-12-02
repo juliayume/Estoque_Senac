@@ -1,8 +1,9 @@
 .containerA{
   display: grid;
   grid-template-columns:  1fr 1fr;
-  grid-template-rows: 38em;
+  grid-template-rows: 100vh;
   grid-template-areas: "senac login";
+
 }
 
 .senac{
@@ -10,13 +11,17 @@
   background-image: url(../Login/assets/ImagemFundo.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+
 }
 .login{
   grid-area: login;           
 }
 
 .senac_estoque{
-  max-width:70%;
+  max-width:60%;
+  padding-top: 04%;
+  margin:15%;
   text-align: center;
   vertical-align: middle;
   display: table-cell;
@@ -25,4 +30,5 @@
 .font_style{
   font-family: 'Poppins', sans-serif;
   margin-left: 2%;
+  font-size: 90%;
 }
